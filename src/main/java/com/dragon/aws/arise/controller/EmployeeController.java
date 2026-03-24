@@ -9,6 +9,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -28,5 +29,9 @@ public class EmployeeController {
     )
     public ResponseEntity<?> greet(){
         return ResponseEntity.status(200).body(new EmployeeResponseDto("Hello Employee, Welcome to Portal..Test_Deployment2"));
+    }
+    @GetMapping("/wish")
+    public ResponseEntity<?> wish(@RequestParam("name") String name){
+        return ResponseEntity.status(200).body("Hi "+name+". Welcome to the Portal..");
     }
 }

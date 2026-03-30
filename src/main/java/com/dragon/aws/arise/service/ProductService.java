@@ -16,7 +16,7 @@ import java.net.URI;
 public class ProductService {
     @Autowired
     RestTemplate restTemplate;
-    private final String API_BASE_URL="https://fakestoreapi.com/products/";
+    private final String API_BASE_URL="https://dummyjson.com/products/";
     public ProductResponseDto getProduct(int id) {
         HttpHeaders headers = new HttpHeaders();
         headers.set("User-Agent", "Mozilla/5.0");

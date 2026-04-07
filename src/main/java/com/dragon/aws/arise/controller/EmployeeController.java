@@ -15,21 +15,17 @@ import org.springframework.web.bind.annotation.*;
 @CrossOrigin(origins = "*")
 public class EmployeeController {
     @GetMapping("/greet")
-    @Operation(
-            summary = "Greet API",
-            description = "Api returns Greeting message",
-            operationId = "greetApi"
-    )
-    @ApiResponses(
-            {
-                    @ApiResponse(responseCode = "200",description = "Success message",content = @Content)
-            }
-    )
-    public ResponseEntity<?> greet(){
-        return ResponseEntity.status(200).body(new EmployeeResponseDto("Hello Employee, Welcome to Portal..Test_Deployment2"));
+    @Operation(summary = "Greet API", description = "Api returns Greeting message", operationId = "greetApi")
+    @ApiResponses({
+            @ApiResponse(responseCode = "200", description = "Success message", content = @Content)
+    })
+    public ResponseEntity<?> greet() {
+        return ResponseEntity.status(200)
+                .body(new EmployeeResponseDto("Hello Employee, Welcome to Portal..Test_Deployment2"));
     }
+
     @GetMapping("/wish")
-    public ResponseEntity<?> wish(@RequestParam("name") String name){
-        return ResponseEntity.status(200).body("Hi "+name+". Welcome to the Portal..");
+    public ResponseEntity<?> wish(@RequestParam("name") String name) {
+        return ResponseEntity.status(200).body("Hi " + name + ". Welcome to the Portal..");
     }
 }
